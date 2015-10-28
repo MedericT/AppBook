@@ -1,14 +1,7 @@
-appbook_homepage:
-    path: /
-    defaults:
-        _controller: FrameworkBundle:Redirect:redirect
-        route: appbook_index
-        permanent: false
-
 appbook_index:
-    path:     /index
-    defaults: { _controller: AppBookBundle:Index:index }
+  path: /
+  defaults: { _controller: AppBookBundle:Index:index }
 
 appbook_book_add:
-    path:    /book/ajouter
+    path:    /livre/ajouter
     defaults: { _controller: AppBookBundle:Book:add }

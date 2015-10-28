@@ -2,7 +2,7 @@ appbook_homepage:
     path: /
     defaults:
         _controller: FrameworkBundle:Redirect:redirect
-        route: appbook_homepage
+        route: appbook_index
         permanent: false
 
 appbook_index:

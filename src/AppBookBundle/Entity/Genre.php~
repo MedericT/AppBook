@@ -70,45 +70,4 @@ class Genre
     {
         return $this->genre;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->books = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add book
-     *
-     * @param \AppBookBundle\Entity\Book $book
-     *
-     * @return Genre
-     */
-    public function addBook(\AppBookBundle\Entity\Book $book)
-    {
-        $this->books[] = $book;
-
-        return $this;
-    }
-
-    /**
-     * Remove book
-     *
-     * @param \AppBookBundle\Entity\Book $book
-     */
-    public function removeBook(\AppBookBundle\Entity\Book $book)
-    {
-        $this->books->removeElement($book);
-    }
-
-    /**
-     * Get books
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getBooks()
-    {
-        return $this->books;
-    }
 }

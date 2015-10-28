@@ -12,11 +12,17 @@ class BookType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            /* Name */
             ->add('title','text', array(
                 'empty_data'   => '- Saisir le titre du livre -',
                 'required' => true
+            ))
+            ->add('genres', 'entity', array(
+                'class' => 'AppBookBundle:Genre',
+                'property' => 'genre',
+                'multiple' => true,
+                'required' => false,
             ));
+
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)

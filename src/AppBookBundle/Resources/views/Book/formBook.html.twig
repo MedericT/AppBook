@@ -22,6 +22,16 @@
         </div>
     </div>
 </div>
+<div class="row">
+    {# Genres du livre #}
+    <div class="col-sm-5">
+        <div class="form-group">
+            {{ form_label(form.genres, "Genre") }}
+            {{ form_errors(form.genres) }}
+            {{ form_widget(form.genres, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+</div>
 
 <div>
   <span class="text-red"><strong>*</strong></span> <span> Champs obligatoires</span>

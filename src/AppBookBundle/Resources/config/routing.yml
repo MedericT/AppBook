@@ -8,3 +8,7 @@ appbook_homepage:
 appbook_index:
     path:     /index
     defaults: { _controller: AppBookBundle:Index:index }
+
+appbook_book_add:
+    path:    /book/ajouter
+    defaults: { _controller: AppBookBundle:Book:add }

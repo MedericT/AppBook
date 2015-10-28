@@ -6,6 +6,12 @@ body {
   text-align: center;
 }
 
+/* Ajout automatique d'un asterisque sur les champs requis */
+.required:after {
+    content: " *";
+    color: #000000;
+}
+
 .btn-custom-lighten.active {
   color: rgba(255, 255, 255, 0.75);
 }
@@ -20,7 +26,6 @@ body {
   background-image: -o-linear-gradient(top, #000000, #1a1a1a);
   background-image: linear-gradient(to bottom, #000000, #1a1a1a);
   background-repeat: repeat-x;
-  border-radius: 0px;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff000000', endColorstr='#ff1a1a1a', GradientType=0);
   border-color: #1a1a1a #1a1a1a #000000;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
@@ -42,4 +47,8 @@ body {
 .btn-custom-lighten:active,
 .btn-custom-lighten.active {
   background-color: #000000 ;
+}
+
+.btn {
+    border-radius: 0px;
 }

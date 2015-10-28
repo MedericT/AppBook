@@ -1,0 +1,10 @@
+appbook_homepage:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: appbook_homepage
+        permanent: false
+
+appbook_index:
+    path:     /index
+    defaults: { _controller: AppBookBundle:Index:index }

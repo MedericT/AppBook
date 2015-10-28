@@ -5,3 +5,7 @@ appbook_index:
 appbook_book_add:
     path:    /livre/ajouter
     defaults: { _controller: AppBookBundle:Book:add }
+
+appbook_genre_add:
+    path:    /genre/ajouter
+    defaults: { _controller: AppBookBundle:Genre:add }

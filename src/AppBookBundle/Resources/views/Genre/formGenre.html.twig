@@ -1,0 +1,38 @@
+{{ form_start(form, {'attr': {'method': 'POST', 'role': 'form'}}) }}
+
+{% if not form.vars.valid %}
+    <div class="alert alert-warning alert-dismissable">
+        <button type=​"button" class=​"close" data-dismiss=​"alert" aria-hidden=​"true">​×​</button>​
+        <h4>
+            <i class="icon fa fa-warning"></i> Erreurs !
+        </h4>​
+        {{ form_errors(form) }}
+    </div>
+{% endif %}
+
+<div class="row">
+    {# Genre #}
+    <div class="col-sm-5">
+        <div class="form-group">
+            {{ form_label(form.genre, "Genre") }}
+            {{ form_errors(form.genre) }}
+            {{ form_widget(form.genre, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+</div>
+
+<div>
+  <span class="text-red"><strong>*</strong></span> <span> Champs obligatoires</span>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">&nbsp;</div>
+  <div class="col-sm-12">
+    <input type="submit" value="Enregistrer" class="btn btn-custom"/>
+    <a href="{{ path('appbook_index') }}" class="btn btn-default" style="border_radius: 0px;">Annuler</a>
+  </div>
+</div>
+
+{{ form_rest(form) }}
+
+{{ form_end(form) }}

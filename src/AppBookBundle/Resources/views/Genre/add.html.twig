@@ -1,0 +1,15 @@
+{% extends 'AppBookBundle::layout.html.twig'%}
+
+{% block maincontent %}
+
+    <div class="container">
+        <div class="starter-template">
+            <h1>Ajout d'un genre</h1>
+        </div>
+
+        <div class="box-body">
+            {{ include("AppBookBundle:Genre:formGenre.html.twig") }}
+        </div>
+    </div>
+
+{% endblock maincontent %}

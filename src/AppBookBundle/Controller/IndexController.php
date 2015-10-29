@@ -12,7 +12,10 @@ class IndexController extends Controller
         $listBooks = $this->getDoctrine()
             ->getManager()
             ->getRepository('AppBookBundle:Book')
-            ->findAll();
+            ->findBy(
+                array(),
+                array('title' => 'asc')
+            );
 
         return $this->render(
             'AppBookBundle:Index:index.html.twig',

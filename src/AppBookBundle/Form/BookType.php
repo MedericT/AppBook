@@ -17,9 +17,9 @@ class BookType extends AbstractType
                 'required' => true
             ))
             ->add('genres', 'entity', array(
+                'multiple' => true,
                 'class' => 'AppBookBundle:Genre',
                 'property' => 'genre',
-                'multiple' => true,
                 'required' => false,
             ));
 

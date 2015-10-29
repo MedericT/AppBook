@@ -13,6 +13,9 @@
         <!-- Custom styles for this template -->
     <link href="{{ asset('bundles/appbook/css/appbook.css') }}" type="text/css" rel="stylesheet" />
 
+    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
+
+
 {% endblock %}
 
 
@@ -45,11 +48,13 @@
 {% endblock %}
 
 
-{% block javascript %}
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+{% block javascripts %}
+
+
+    <script src="{{ asset('bundles/appbook/js/jquery-2.1.4.min.js') }}" type="application/javascript"></script>
     <script src="{{ asset('bundles/appbook/js/bootstrap.min.js') }}" type="application/javascript"></script>
+    <script src="{{ asset('bundles/appbook/js/select2.js') }}" type="application/javascript"></script>
+
+    <script src="{{ asset('bundles/appbook/js/appbook.js') }}" type="application/javascript"></script>
 
 {% endblock %}

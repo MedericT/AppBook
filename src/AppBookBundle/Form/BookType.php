@@ -19,7 +19,13 @@ class BookType extends AbstractType
             ->add('genres', 'entity', array(
                 'multiple' => true,
                 'class' => 'AppBookBundle:Genre',
-                'property' => 'genre',
+                'choice_label' => 'genre',
+                'required' => false,
+            ))
+            ->add('authors', 'entity', array(
+                'multiple' => true,
+                'class' => 'AppBookBundle:Author',
+                'choice_label' => 'firstLastName',
                 'required' => false,
             ));
 

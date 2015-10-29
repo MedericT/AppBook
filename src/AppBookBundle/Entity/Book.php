@@ -33,8 +33,15 @@ class Book
 
     /**
     * @ORM\ManyToMany(targetEntity="Genre", cascade="persist")
+    * @Assert\Valid()
     */
     private $genres;
+
+    /**
+    * @ORM\ManyToMany(targetEntity="Author", cascade="persist")
+    * @Assert\Valid()
+    */
+    private $authors;
 
     /**
      * Get id
@@ -109,5 +116,39 @@ class Book
     public function getGenres()
     {
         return $this->genres;
+    }
+
+    /**
+     * Add author
+     *
+     * @param \AppBookBundle\Entity\Author $author
+     *
+     * @return Book
+     */
+    public function addAuthor(\AppBookBundle\Entity\Author $author)
+    {
+        $this->authors[] = $author;
+
+        return $this;
+    }
+
+    /**
+     * Remove author
+     *
+     * @param \AppBookBundle\Entity\Author $author
+     */
+    public function removeAuthor(\AppBookBundle\Entity\Author $author)
+    {
+        $this->authors->removeElement($author);
+    }
+
+    /**
+     * Get authors
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAuthors()
+    {
+        return $this->authors;
     }
 }

@@ -32,9 +32,16 @@ class Book
     private $title;
 
     /**
-    * @ORM\ManyToMany(targetEntity="Genre", inversedBy="books", cascade="persist")
+    * @ORM\ManyToMany(targetEntity="Genre", cascade="persist")
+    * @Assert\Valid()
     */
     private $genres;
+
+    /**
+    * @ORM\ManyToMany(targetEntity="Author", cascade="persist")
+    * @Assert\Valid()
+    */
+    private $authors;
 
     /**
      * Get id
@@ -68,5 +75,80 @@ class Book
     public function getTitle()
     {
         return $this->title;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->genres = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add genre
+     *
+     * @param \AppBookBundle\Entity\Genre $genre
+     *
+     * @return Book
+     */
+    public function addGenre(\AppBookBundle\Entity\Genre $genre)
+    {
+        $this->genres[] = $genre;
+
+        return $this;
+    }
+
+    /**
+     * Remove genre
+     *
+     * @param \AppBookBundle\Entity\Genre $genre
+     */
+    public function removeGenre(\AppBookBundle\Entity\Genre $genre)
+    {
+        $this->genres->removeElement($genre);
+    }
+
+    /**
+     * Get genres
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGenres()
+    {
+        return $this->genres;
+    }
+
+    /**
+     * Add author
+     *
+     * @param \AppBookBundle\Entity\Author $author
+     *
+     * @return Book
+     */
+    public function addAuthor(\AppBookBundle\Entity\Author $author)
+    {
+        $this->authors[] = $author;
+
+        return $this;
+    }
+
+    /**
+     * Remove author
+     *
+     * @param \AppBookBundle\Entity\Author $author
+     */
+    public function removeAuthor(\AppBookBundle\Entity\Author $author)
+    {
+        $this->authors->removeElement($author);
+    }
+
+    /**
+     * Get authors
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAuthors()
+    {
+        return $this->authors;
     }
 }

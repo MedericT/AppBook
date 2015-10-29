@@ -23,10 +23,20 @@
     </div>
 </div>
 <div class="row">
+    {# Auteur du livre #}
+    <div class="col-sm-5">
+        <div class="form-group">
+            {{ form_label(form.authors, "Auteur(s)") }}
+            {{ form_errors(form.authors) }}
+            {{ form_widget(form.authors, {'attr': {'class': 'form-control js-custom-multiple'}}) }}
+        </div>
+    </div>
+</div>
+<div class="row">
     {# Genres du livre #}
     <div class="col-sm-5">
         <div class="form-group">
-            {{ form_label(form.genres, "Genre") }}
+            {{ form_label(form.genres, "Genre(s)") }}
             {{ form_errors(form.genres) }}
             {{ form_widget(form.genres, {'attr': {'class': 'form-control js-custom-multiple'}}) }}
         </div>

@@ -32,7 +32,7 @@ class Genre
     private $genre;
 
     /**
-    * @ORM\ManyToMany(targetEntity="Book", inversedBy="genres", cascade="persist")
+    * @ORM\ManyToMany(targetEntity="Book", cascade="persist")
     **/
     private $books;
 

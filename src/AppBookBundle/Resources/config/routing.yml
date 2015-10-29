@@ -9,3 +9,7 @@ appbook_book_add:
 appbook_genre_add:
     path:    /genre/ajouter
     defaults: { _controller: AppBookBundle:Genre:add }
+
+appbook_author_add:
+    path:    /auteur/ajouter
+    defaults: { _controller: AppBookBundle:Author:add }

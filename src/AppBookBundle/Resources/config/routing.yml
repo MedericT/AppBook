@@ -3,13 +3,13 @@ appbook_index:
   defaults: { _controller: AppBookBundle:Index:index }
 
 appbook_book_add:
-    path:    /livre/ajouter
+    path:    /ajouter/livre
     defaults: { _controller: AppBookBundle:Book:add }
 
 appbook_genre_add:
-    path:    /genre/ajouter
+    path:    /ajouter/genre
     defaults: { _controller: AppBookBundle:Genre:add }
 
 appbook_author_add:
-    path:    /auteur/ajouter
+    path:    /ajouter/auteur
     defaults: { _controller: AppBookBundle:Author:add }

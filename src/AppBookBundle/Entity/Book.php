@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * Book
  *
  * @ORM\Table(name="book")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBookBundle\Entity\BookRepository")
  */
 class Book
 {
@@ -33,7 +33,6 @@ class Book
 
     /**
     * @ORM\ManyToMany(targetEntity="Genre", cascade="persist")
-    * @Assert\Valid()
     */
     private $genres;
 

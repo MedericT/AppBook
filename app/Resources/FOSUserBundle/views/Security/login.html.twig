@@ -1,23 +1,54 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
 {% block fos_user_content %}
-{% if error %}
-    <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
-{% endif %}
 
-<form action="{{ path("fos_user_security_check") }}" method="post">
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
-    <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" />
+  <link rel="icon" href="../../favicon.ico">
+  <!-- Bootstrap core CSS -->
+  <link href="{{ asset('bundles/appbook/css/bootstrap.min.css') }}" type="text/css" rel="stylesheet" />
+  <link href="{{ asset('bundles/appbook/css/appbook.css') }}" type="text/css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="{{ asset('bundles/appbook/css/signin.css') }}" type="text/css" rel="stylesheet" />
 
-    <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
-    <input type="password" id="password" name="_password" required="required" />
+  <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+  <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+  <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+  <div class="container">
+    <form class="form-signin" action="{{ path("fos_user_security_check") }}" method="post">
+      <h2 class="form-signin-heading">AppBook</h2>
 
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
-</form>
-youhouuuuu ca marccheeee 
+      {% if error %}
+        <div class="login error">
+          <div class="alert alert-danger">{{ error|trans({}, 'FOSUserBundle') }}</div>
+        </div>
+      {% endif %}
+
+      <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+
+      <label for="username" class="sr-only">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+      <input type="username" id="username" placeholder="Nom d'utilisateur" class="form-control" name="_username" value="{{ last_username }}" required="required" autofocus/>
+
+      <label for="password" class="sr-only">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+      <input type="password" class="form-control" id="password" placeholder="Mot de passe"name="_password" required="required" />
+      <div class="checkbox">
+        <label for="remember_me">
+          <input type="checkbox" id="remember_me" name="_remember_me" value="on" /> {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+        </label>
+      </div>
+
+
+      <input type="submit" id="_submit" class="btn btn-lg btn-custom btn-block" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+
+
+    </form>
+
+  </div> <!-- /container -->
+
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
 {% endblock fos_user_content %}

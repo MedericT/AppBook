@@ -16,6 +16,14 @@ class IndexController extends Controller
                 array(),
                 array('title' => 'asc')
             );
+        $listAlphabetic = array();
+
+        foreach ($listBooks as $key=>$book){
+          $listAlphabetic[strtoupper($book->getTitle()[0])][] = $book;
+        }
+
+          // dump($listAlphabetic);
+          // die();
 
         return $this->render(
             'AppBookBundle:Index:index.html.twig',
